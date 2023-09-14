@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projeto-base-spring-deployment
+  labels:
+    app: projeto-base-spring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: projeto-base-spring
+  template:
+    metadata:
+      labels:
+        app: projeto-base-spring
+    spec:
+      containers:
+        - name: projeto-base-spring-container
+          image: dvvdoficial/projeto-base-spring:69
+          ports:
+            - containerPort: 8080
